@@ -18,6 +18,10 @@ function calculate() {
   const onePiece = document.getElementById("option-one-piece").checked
   const SALES_TAX = 0.13
   let basePrice = 0;
+  const subtotal = basePrice * inputAmount;
+  const tax = subtotal * SALES_TAX;
+  const total = subtotal + tax;
+
 
   // input
   if (yuGiOh) {
@@ -32,9 +36,6 @@ function calculate() {
   else {
     basePrice = 22.80;
   }
-  const subtotal = basePrice * inputAmount;
-  const tax = subtotal * SALES_TAX;
-  const total = subtotal + tax;
 
     document.getElementById("result").innerHTML =
     "<p>Subtotal: $" + subtotal.toFixed(2) + "</p>" +
